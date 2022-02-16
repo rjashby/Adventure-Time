@@ -66,3 +66,18 @@ canvas {
   color: white;
   text-shadow: 1px 2px 3px black;
 }
+
+.battleButtons {
+  margin-left: 80%;
+  margin-top: 20%;
+  margin-bottom: 15%;
+}
+
+.finn {
+  margin-top: 60%;
+  margin-left: 25%;
+}
+
+.ogre {
+  margin-left: 25%;
+}
