@@ -10,6 +10,7 @@ let myBackground;
 let gnomeArray;
 let grandma1;
 let grandma2;
+let grandma3
 let grandmaArray;
 let firepit;
 
@@ -43,11 +44,12 @@ function startGame() {
   myGamePiece = new component("image", 43, 70, "./assets/images/jake-L1.png", 10, 430, "jake");
   grandma1 = new component("image", 50, 70, "./assets/images/grandma1.png", 330, 0, "grandma");
   grandma2 = new component("image", 50, 70, "./assets/images/grandma2.png", 260, 0, "grandma");
+  grandma3 = new component("image", 50, 70, "./assets/images/grandma3.png", 540, 0, "grandma");
   myGnome1 = new component("image", 50, 70, "./assets/images/gnome1.png", 400, 0, "gnome");
   myGnome2 = new component("image", 50, 70, "./assets/images/gnome2.png", 240, 0, "gnome");
   myGnome3 = new component("image", 50, 70, "./assets/images/gnome3.png", 600, 0, "gnome");
   gnomeArray = [myGnome1, myGnome2, myGnome3];
-  grandmaArray= [grandma1, grandma2];
+  grandmaArray= [grandma1, grandma2, grandma3];
   firepit = new component("image", 100, 120, "./assets/images/fire.png", 1000, 600, "fire")
   myObstacle = new component("image", 100, 35, "./assets/images/log.png", 320, 375, "platform");
   mySecondObstacle = new component("image", 100, 35, "./assets/images/log.png", 520, 275, "platform");
@@ -217,6 +219,7 @@ function updateGameArea() {
     myGnome3.x += 3;
     grandma1.x +=3;
     grandma2.x +=3;
+    grandma3.x +=3;
     firepit.x +=3;
     if (myGamePiece.image.src[myGamePiece.image.src.length - 5] === "1") {
       setTimeout(function(){
@@ -239,6 +242,7 @@ function updateGameArea() {
     myGnome3.x -= 3;
     grandma1.x -= 3;
     grandma2.x -= 3;
+    grandma3.x -= 3;
     firepit.x -= 3;
     myBackground.x -= 2;
     if (myGamePiece.image.src[myGamePiece.image.src.length - 5] === "1") {
@@ -271,6 +275,8 @@ function updateGameArea() {
   grandma1.update();
   grandma2.newPos();
   grandma2.update();
+  grandma3.newPos();
+  grandma3.update();
   myGamePiece.newPos();
   myGamePiece.update();
   myGnome1.newPos();
@@ -291,12 +297,6 @@ function updateGameArea() {
   if (myBackground.x > 0) {
     myBackground.x = 0;
   }
-  setTimeout(function(){
-    grandma1.x = -20000
-  }, 5000);
-  setTimeout(function(){
-    grandma2.x = -20000
-  }, 7500);
   if (myGnome1.x > 10000 && myGnome2.x > 10000 && myGnome3.x > 10000){
     setTimeout(function(){
       window.location.href = "afterGnome.html"

@@ -17,10 +17,11 @@ Co-authored-by: Isaac Overstreet <isaacoverstreet3@gmail.com>"
 * _JavaScript_
 * _Jquery_
 * _gnomes_
+* _ogre_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_An Adventure Time game based on season 1 episode 5 The Enchiridion_
 
 ## Setup/Installation Requirements
 
@@ -31,17 +32,17 @@ _{This is a detailed description of your application. Give as much detail as nee
 * _Run the environment in your default web browser by typing *npm run start* in the terminal_
 
 
-## Known Bugs
+## Gnome Bugs
 
-* _No known bugs_
+* _No gnome bugs_
 
 ## License
 
-_Any questions or concerns please email: 
-Chase Stokes chasehstokes@gmail.com, 
-Isaac Overstreet isaacoverstreet3@gmail.com, 
-Drew Henderson drewhendersonemail@gmail.com, 
-Ryan Ashby rjapsu160@gmail.com, 
-Marisa Edgar marisaedgar1212@gmail.com.
+_Any questions or concerns please email:_ 
+_Chase Stokes chasehstokes@gmail.com,_ 
+_Isaac Overstreet isaacoverstreet3@gmail.com,_ 
+_Drew Henderson drewhendersonemail@gmail.com,_ 
+_Ryan Ashby rjapsu160@gmail.com,_ 
+_Marisa Edgar marisaedgar1212@gmail.com._
 
 Copyright (c) _2022_ _Chase Stokes_ _Isaac Overstreet_ _Drew Henderson_ _Ryan Ashby_ _Marisa Edgar_

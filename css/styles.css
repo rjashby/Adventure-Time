@@ -78,20 +78,56 @@ canvas {
   margin-left: 25%;
 }
 
+.finn-monster {
+  margin-top: 90%;
+  margin-bottom: -80%;
+  margin-left: -25%;
+  width: 100px;
+}
+
 .ogre {
   margin-left: 25%;
 }
 
 .monster {
-  margin-top: -50%;
+  margin-top: 25%;
   width: 50%;
   float: right;
   margin-left: 25%;
 }
 
-#ogre-bg{
+#ogre-bg {
   background-image: url("../assets/images/ogre-bg.jpg");
+  background-size: cover;
 }
-#monster-bg{
+
+#monster-bg {
   background-image: url("../assets/images/final-bg-2.jpg");
+  background-size: cover;
+}
+
+#playAgain {
+  background-image: url("https://cdn.shopify.com/s/files/1/1118/7224/products/Lemongrab-Unacceptable-Sticker-by-Rockin-Monkey-of-San-Antonio.jpg?v=1556468176");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+audio {
+  display: none;
+}
+
+.face {
+  margin-bottom: -25%;
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
 }
