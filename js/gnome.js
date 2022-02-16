@@ -299,7 +299,7 @@ function updateGameArea() {
   }, 7500);
   if (myGnome1.x > 10000 && myGnome2.x > 10000 && myGnome3.x > 10000){
     setTimeout(function(){
-      window.location.href = "ogre1.html"
+      window.location.href = "afterGnome.html"
     }, 10)
   }
 }
