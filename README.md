@@ -21,7 +21,7 @@ Co-authored-by: Isaac Overstreet <isaacoverstreet3@gmail.com>"
 
 ## Description
 
-_An Adventure Time game based on season 1 episode 5 The Enchiridion_
+_An Adventure Time game based on season 1 episode 5 The Enchiridion. Catch the princess, capture the gnomes, defeat the ogre, and slay the beast. Prove yourself worthy of the heros Enchiridion._
 
 ## Setup/Installation Requirements
 

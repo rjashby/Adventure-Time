@@ -24,6 +24,24 @@
   audio {
     display: none;
   }
+
+  button {
+  position: fixed;
+  margin-left:100px;
+  margin-top: 250px;
+  padding: 15px 20px 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  border: 3px solid black;
+  text-decoration: underline;
+  transition: 0.5s;
+  }
+
+  button:hover {
+    transform: translateY(-15px);
+  }
   </style>
   <script src="js/jquery-3.6.0.js"></script>
 
@@ -31,13 +49,18 @@
 </head>
 <body>
   <div class="container">
-  
+    <button id="fightEm">Give Em' a Beat Down!</button>
   </div>
   <div>
     <audio controls autoplay>
       <source src="assets\audio\Jake - Back Off.mp3" type="audio/mp3">
     </audio>
   </div>
-  <a href="./gnomes.html" accesskey="q">Continue</a>
+  <!-- <a href="./gnomes.html" accesskey="q">Continue</a> -->
+  <script>
+    $("#fightEm").on("click", function() {
+      window.location.href = "./gnomes.html"
+    })
+  </script>
 </body>
 </html>

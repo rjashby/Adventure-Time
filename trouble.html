@@ -24,18 +24,43 @@
   audio {
     display: none;
   }
+
+  #catchPB {
+  position: fixed;
+  margin-left:100px;
+  margin-top: 250px;
+  padding: 15px 20px 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  border: 3px solid black;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+button:hover {
+  transform: translateY(-15px);
+}
+
   </style>
   <script src="js/jquery-3.6.0.js"></script>
   <title>PB in Trouble</title>
 </head>
 <body>
   <div class="container">
+    <button id="catchPB">Try to Catch the Princess</button>
   </div>
   <div>
     <audio controls autoplay>
       <source src="assets\audio\F - PB in Trouble.mp3" type="audio/mp3">
     </audio>
   </div>
-  <a href="./page1.html" accesskey="q">Continue</a>
+  <!-- <a href="./page1.html" accesskey="q">Continue</a> -->
+  <script>
+    $("#catchPB").on("click", function() {
+      window.location.href = "./page1.html"
+    })
+  </script>
 </body>
 </html>

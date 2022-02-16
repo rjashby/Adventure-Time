@@ -24,6 +24,25 @@
   audio {
     display: none;
   }
+
+  button {
+  position: fixed;
+  margin-left:100px;
+  margin-top: 250px;
+  padding: 15px 20px 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  border: 3px solid black;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+button:hover {
+  transform: translateY(-15px);
+}
+
   </style>
   <script src="js/jquery-3.6.0.js"></script>
 
@@ -31,12 +50,18 @@
 </head>
 <body>
   <div class="container">
+    <button id="saveEm">Save Those Little Guys!</button>
   </div>
   <div>
     <audio controls autoplay>
       <source src="assets\audio\Gnomes - Stuck.mp3" type="audio/mp3">
     </audio>
   </div>
-  <a href="./gnomes2.html" accesskey="q">Continue</a>
+  <!-- <a href="./gnomes2.html" accesskey="q">Continue</a> -->
+  <script>
+    $("#saveEm").on("click", function() {
+      window.location.href = "./gnomes2.html"
+    })
+  </script>
 </body>
 </html>
