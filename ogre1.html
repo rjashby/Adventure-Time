@@ -24,6 +24,24 @@
   audio {
     display: none;
   }
+
+  button {
+  position: fixed;
+  margin-left:100px;
+  margin-top: 250px;
+  padding: 15px 20px 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  border: 3px solid black;
+  text-decoration: underline;
+  transition: 0.5s;
+  }
+
+  button:hover {
+    transform: translateY(-15px);
+  }
   </style>
   <script src="js/jquery-3.6.0.js"></script>
 
@@ -31,14 +49,18 @@
 </head>
 <body>
   <div class="container">
-    
+    <button id="fightOgre">Now Fight This Guy!</button>
   </div>
   <div>
     <audio controls autoplay>
       <source src="assets\audio\Ogre - Cannot Pass.mp3" type="audio/mp3">
     </audio>
   </div>
-  <a href="./ogre.html" accesskey="q">Continue</a>
-  <!-- <a href="./ogre2.html" accesskey="q">Continue</a> -->
+  <!-- <a href="./ogre.html" accesskey="q">Continue</a> -->
+  <script>
+    $("#fightOgre").on("click", function() {
+      window.location.href = "./ogre.html"
+    })
+  </script>
 </body>
 </html>

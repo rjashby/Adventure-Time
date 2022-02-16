@@ -131,3 +131,14 @@ audio {
     transform:rotate(360deg);
   }
 }
+
+.outputFinal {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.output {
+  font-size: 16px;
+  font-weight: bold;
+}

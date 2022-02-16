@@ -52,6 +52,22 @@ function battleResult(player, enemy) {
     window.location.href = "ogre2.html"
   }
 }
+
+async function typeWriter(sentence, outputId) {
+  const letters = sentence.split("");
+  let i = 0;
+  while(i < letters.length) {
+    await letterDelay();
+    $(outputId).append(letters[i]);
+    i++;
+  }
+  return;
+}
+function letterDelay() {
+  return new Promise(resolve => setTimeout(resolve, 50));
+}
+const battleID = ".output";
+const battleInfo = "Turn Based Battle. Attack or heal on your turn, and the Ogre will attack on his!"
 let turn = true;
 $(document).ready(function() {
   let Finn = new Player("Finn", 50);
@@ -59,6 +75,7 @@ $(document).ready(function() {
   let audio = new Audio("assets/audio/F - Shmowzow.mp3");
   let audio2 = new Audio("assets/audio/F - Mathematical.mp3");
   displayInfo(Finn, Ogre)
+  typeWriter(battleInfo, battleID);
   $(".attack").on("click", function(){
     audio.play();
     battle(Finn, Ogre);

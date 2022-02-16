@@ -52,8 +52,24 @@ function battleResult(player, enemy) {
     window.location.href = "minotaur.html"
   }
 }
+async function typeWriter(sentence, outputId) {
+  const letters = sentence.split("");
+  let i = 0;
+  while(i < letters.length) {
+    await letterDelay();
+    $(outputId).append(letters[i]);
+    i++;
+  }
+  return;
+}
+function letterDelay() {
+  return new Promise(resolve => setTimeout(resolve, 50));
+}
+const battleID = ".outputFinal";
+const battleInfo = "Turn Based Battle. Attack or heal on your turn, and the Heart Monster will attack on his!"
 let turn = true;
 $(document).ready(function() {
+  typeWriter(battleInfo, battleID)
   let Finn = new Player("Finn", 50);
   let Monster = new Enemy("Heart Monster", 75);
   let audio = new Audio("assets/audio/F - Shmowzow.mp3");

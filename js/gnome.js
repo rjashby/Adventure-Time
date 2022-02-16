@@ -299,7 +299,7 @@ function updateGameArea() {
   }
   if (myGnome1.x > 10000 && myGnome2.x > 10000 && myGnome3.x > 10000){
     setTimeout(function(){
-      window.location.href = "afterGnome.html"
+      window.location.href = "backInFire.html"
     }, 10)
   }
 }
