@@ -55,26 +55,26 @@ function battleResult(player, enemy) {
 let turn = true;
 $(document).ready(function() {
   let Finn = new Player("Finn", 50);
-  let Ogre = new Enemy("Ogre", 50);
-  displayInfo(Finn, Ogre)
+  let Monster = new Enemy("Heart Monster", 75);
+  displayInfo(Finn, Monster)
   $(".attack").on("click", function(){
-    battle(Finn, Ogre);
-    displayInfo(Finn, Ogre);
-    battleResult(Finn, Ogre);
+    battle(Finn, Monster);
+    displayInfo(Finn, Monster);
+    battleResult(Finn, Monster);
     setTimeout(function(){
-      battle(Finn, Ogre)
-      displayInfo(Finn, Ogre)
-      battleResult(Finn, Ogre)
+      battle(Finn, Monster)
+      displayInfo(Finn, Monster)
+      battleResult(Finn, Monster)
     }, 500)
   })
   $(".item").on("click", function() {
     Finn.usePotion("Potion");
     turn = !turn;
-    displayInfo(Finn, Ogre);
+    displayInfo(Finn, Monster);
     setTimeout(function() {
-      battle(Finn, Ogre)
-      displayInfo(Finn, Ogre)
-      battleResult(Finn, Ogre)
+      battle(Finn, Monster)
+      displayInfo(Finn, Monster)
+      battleResult(Finn, Monster)
     }, 500)
   })
 })
