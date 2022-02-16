@@ -49,7 +49,7 @@ function battleResult(player, enemy) {
     window.location.href = "game-over-ogre.html"
   }
   if (enemy.hp <= 0) {
-    window.location.href = "ogre2.html"
+    window.location.href = "minotaur.html"
   }
 }
 let turn = true;

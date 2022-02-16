@@ -83,5 +83,8 @@ canvas {
 }
 
 .monster {
+  margin-top: -50%;
+  width: 50%;
+  float: right;
   margin-left: 25%;
 }
