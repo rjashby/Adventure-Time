@@ -88,3 +88,10 @@ canvas {
   float: right;
   margin-left: 25%;
 }
+
+#ogre-bg{
+  background-image: url("../assets/images/ogre-bg.jpg");
+}
+#monster-bg{
+  background-image: url("../assets/images/final-bg-2.jpg");
+}
