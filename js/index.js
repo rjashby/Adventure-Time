@@ -141,7 +141,7 @@ function updateGameArea() {
     myPrincess.x = myGamePiece.x + 25;
     myPrincess.y = myGamePiece.y - 25; 
     setTimeout(function(){
-      window.location.href = "quest.html";
+      window.location.href = "catch.html";
     }, 1350)
   } else if (myPrincess.crashWith(myGamePiece)){
     window.location.href = "gnomes.html";

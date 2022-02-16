@@ -26,10 +26,10 @@ class Enemy {
 }
 
 function displayInfo(player, enemy) {
-  $(".playerName").html(player.name)
-  $(".playerHealth").html(player.hp)
-  $(".enemyName").html(enemy.name)
-  $(".enemyHealth").html(enemy.hp)
+  $(".playerName").html(`Name: ${player.name}`)
+  $(".playerHealth").html(`Health: ${player.hp}`)
+  $(".enemyName").html(`Name: ${enemy.name}`)
+  $(".enemyHealth").html(`Health: ${enemy.hp}`)
 }
 
 function battle(player, enemy) {
@@ -46,4 +46,5 @@ function battle(player, enemy) {
 $(document).ready(function() {
   let Finn = new Player("Finn", 50);
   let Ogre = new Enemy("Ogre", 50);
+  displayInfo(Finn, Ogre)
 })
