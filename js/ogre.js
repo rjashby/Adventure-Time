@@ -32,32 +32,39 @@ function displayInfo(player, enemy) {
   $(".enemyHealth").html(`Health: ${enemy.hp}`)
 }
 
-function battle(player, enemy, turn) {
+function battle(player, enemy) {
   let playerAttack = player.attack();
   let enemyAttack = enemy.attack();
   if ( turn === true) {
-    console.log(turn);
+    console.log(turn + "if : before !turn");
     enemy.hp -= playerAttack;
     turn = !turn;
-    console.log(turn);
+    console.log(turn + "if : after !turn");
   } else if (turn === false) {
-    enemy.attack();
     player.hp -= enemyAttack;
     turn = !turn;
-    console.log(turn);
+    console.log(turn + "else if");
   }
 }
-
+let turn = true;
 $(document).ready(function() {
-  let turn = true;
   let Finn = new Player("Finn", 50);
   let Ogre = new Enemy("Ogre", 50);
   displayInfo(Finn, Ogre)
   $(".attack").on("click", function(){
-    battle(Finn, Ogre, turn);
+    battle(Finn, Ogre);
     displayInfo(Finn, Ogre);
     setTimeout(function(){
-      battle(Finn, Ogre, turn)
+      battle(Finn, Ogre)
+      displayInfo(Finn, Ogre)
+    }, 500)
+  })
+  $(".item").on("click", function() {
+    Finn.usePotion("Potion");
+    turn = !turn;
+    displayInfo(Finn, Ogre);
+    setTimeout(function() {
+      battle(Finn, Ogre)
       displayInfo(Finn, Ogre)
     }, 500)
   })
