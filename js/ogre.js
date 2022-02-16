@@ -56,8 +56,11 @@ let turn = true;
 $(document).ready(function() {
   let Finn = new Player("Finn", 50);
   let Ogre = new Enemy("Ogre", 50);
+  let audio = new Audio("assets/audio/F - Shmowzow.mp3");
+  let audio2 = new Audio("assets/audio/F - Mathematical.mp3");
   displayInfo(Finn, Ogre)
   $(".attack").on("click", function(){
+    audio.play();
     battle(Finn, Ogre);
     displayInfo(Finn, Ogre);
     battleResult(Finn, Ogre);
@@ -68,6 +71,7 @@ $(document).ready(function() {
     }, 500)
   })
   $(".item").on("click", function() {
+    audio2.play();
     Finn.usePotion("Potion");
     turn = !turn;
     displayInfo(Finn, Ogre);
