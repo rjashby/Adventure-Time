@@ -25,7 +25,7 @@
     display: none;
   }
 
-  button {
+  #approach {
   position: fixed;
   margin-left: 20px;
   margin-top: 450px;
@@ -42,6 +42,23 @@
   font-weight: bold;
   }
 
+  #goHome {
+  position: fixed;
+  margin-left: 300px;
+  margin-top: 450px;
+  padding: 15px 20px 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  border: 3px solid black;
+  text-decoration: underline;
+  transition: 0.5s;
+  background-color: plum;
+  font-size: 18px;
+  font-weight: bold;
+  }
+
   button:hover {
     transform: translateY(15px);
   }
@@ -53,6 +70,7 @@
 <body>
   <div class="container">
     <button id="approach">Approach the Gatekeeper</button>
+    <button id="goHome">Go Home and Play Games</button>
   </div>
   <div>
     <audio controls autoplay>
@@ -63,6 +81,10 @@
   <script>
     $("#approach").on("click", function() {
       window.location.href = "./gatekeeper.html"
+    })
+
+    $("#goHome").on("click", function() {
+      window.location.href = "./cards.html"
     })
   </script>
 </body>

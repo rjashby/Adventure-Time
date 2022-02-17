@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
   <style>
-    script {
+  script {
     display: none
   }
   
   body {
-    background-image: url('/assets/images/gatekeeper.jpg'); 
+    background-image: url('assets/images/Card Wars.png'); 
     height: 100%;
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -19,15 +20,15 @@
   a {
     color: rgba(255, 255, 255, 0);
   }
-
+  
   audio {
     display: none;
   }
 
-  #keeperHead {
+  button {
   position: fixed;
-  margin-left:100px;
-  margin-top: 250px;
+  margin-left:300px;
+  margin-top: 270px;
   padding: 15px 20px 20px;
   display:flex;
   align-items: center;
@@ -39,30 +40,28 @@
   background-color: lightseagreen;
   font-size: 18px;
   font-weight: bold;
-}
+  }
 
-button:hover {
-  transform: translateY(-15px);
-}
-
+  button:hover {
+    transform: translateY(-15px);
+  }
   </style>
   <script src="js/jquery-3.6.0.js"></script>
-
-  <title>Gate Keeper</title>
+  <title>Playing Card Wars</title>
 </head>
 <body>
   <div class="container">
-    <button id="keeperHead">Interesting Hat... No?</button>
+    <button id="backToQuest">Time to Go Back to the Quest</button>
   </div>
   <div>
     <audio controls autoplay>
-      <source src="assets\audio\Keyper - Key Is In You.mp3" type="audio/mp3">
+      <source src="assets\audio\Careless Whisper.mp3" type="audio/mp3">
     </audio>
   </div>
-  <!-- <a href="./opengate.html" accesskey="q">Continue</a> -->
+  <!-- <a href="./quest.html" accesskey="q">Continue</a> -->
   <script>
-    $("#keeperHead").on("click", function() {
-      window.location.href = "./opengate.html"
+    $("#backToQuest").on("click", function() {
+      window.location.href = "./gate.html"
     })
   </script>
 </body>

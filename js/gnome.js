@@ -13,6 +13,7 @@ let grandma2;
 let grandma3
 let grandmaArray;
 let firepit;
+let gnomeid = -1;
 
 let myGameArea = {
   canvas : document.createElement("canvas"),
@@ -40,6 +41,8 @@ let myGameArea = {
 
 function startGame() {
   myGameArea.start();
+  let audio = new Audio("assets/audio/Mario - Overworld Theme.mp3");
+  audio.play();
   myFinn = new component("image", 43, 70, "./assets/images/finn-R1.png", 10, 430, "finn");
   myGamePiece = new component("image", 43, 70, "./assets/images/jake-L1.png", 10, 430, "jake");
   grandma1 = new component("image", 50, 70, "./assets/images/grandma1.png", 330, 0, "grandma");
@@ -164,6 +167,8 @@ function updateGameArea() {
     myGamePiece.gravitySpeed = 0;
     myGamePiece.jump = 0;
   }
+  
+  let counter = 0;
   gnomeArray.forEach(function(gnome) {
     if (gnome.crashWith(myObstacle)){
       gnome.y = myObstacle.y - gnome.height;
@@ -178,14 +183,17 @@ function updateGameArea() {
       gnome.gravitySpeed = 0;
       gnome.jump = 0;
     }
-    if (myGamePiece.x > gnome.x - myGamePiece.width && myGamePiece.x < gnome.x + myGamePiece.width && myGamePiece.y > gnome.y - myGamePiece.height && myGamePiece.y < gnome.y + myGamePiece.height){
+    if ((gnomeid === counter || gnomeid === -1) && myGamePiece.x > gnome.x - myGamePiece.width && myGamePiece.x < gnome.x + myGamePiece.width && myGamePiece.y > gnome.y - myGamePiece.height && myGamePiece.y < gnome.y + myGamePiece.height){
+      console.log(counter, gnomeid);
       gnome.x = myGamePiece.x + 25;
       gnome.y = myGamePiece.y - 25;
       gnome.gravitySpeed = 0;
       myGamePiece.image.src = "./assets/images/jake-angry.png";
       myGamePiece.width = 80;
       myGamePiece.height = 120;
+      gnomeid = counter;
     }
+    counter++;
   })
   grandmaArray.forEach(function(gnome) {
     if (gnome.crashWith(myObstacle)){
@@ -261,16 +269,24 @@ function updateGameArea() {
       gnome.x = 20000;
       myGamePiece.width = 43;
       myGamePiece.height = 70;
+      myGamePiece.image.src = "./assets/images/jake-L1.png";
+      gnomeid = -1;
+      let audio = new Audio("assets/audio/Jake - Cool.mp3");
+      audio.currentTime = 0.5;
+      audio.play();
     }
   })
-
-  
 
   if (myGameArea.keys && myGameArea.keys[83]) {
     myGamePiece.speedY = 4; }
   if (myGameArea.keys && myGameArea.keys[32] && myGamePiece.speedY === 0) {
-    myGamePiece.jump = -10;}
-  console.log(myGamePiece.image.src[myGamePiece.image.src.length - 6], myGamePiece.image.src[myGamePiece.image.src.length - 5])
+    if (myGamePiece.jump > -0.1) {
+      let audio = new Audio("assets/audio/Mario - Jump Noise.mp3");
+      audio.volume = 0.1;
+      audio.play();
+    }
+    myGamePiece.jump = -10;
+  }
   grandma1.newPos();
   grandma1.update();
   grandma2.newPos();
@@ -292,7 +308,6 @@ function updateGameArea() {
   myThirdObstacle.update();
   if (myBackground.x <= -1280) {
     myBackground.x = -1280;
-    console.log("WW");
   }
   if (myBackground.x > 0) {
     myBackground.x = 0;

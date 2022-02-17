@@ -24,18 +24,45 @@
   audio {
     display: none;
   }
+
+  button {
+  position: fixed;
+  margin-left:800px;
+  margin-top: 270px;
+  padding: 15px 20px 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  border: 3px solid black;
+  text-decoration: underline;
+  transition: 0.5s;
+  background-color: plum;
+  font-size: 18px;
+  font-weight: bold;
+  }
+
+  button:hover {
+    transform: translateY(15px);
+  }
   </style>
   <script src="js/jquery-3.6.0.js"></script>
   <title>Finn Catch</title>
 </head>
 <body>
   <div class="container">
+    <button id="findOut">What's She On About?!</button>
   </div>
   <div>
     <audio controls autoplay>
       <source src="assets\audio\PB - My Hero.mp3" type="audio/mp3">
     </audio>
   </div>
-  <a href="./quest.html" accesskey="q">Continue</a>
+  <!-- <a href="./quest.html" accesskey="q">Continue</a> -->
+  <script>
+    $("#findOut").on("click", function() {
+      window.location.href = "./quest.html"
+    })
+  </script>
 </body>
 </html>

@@ -30,6 +30,8 @@ let myGameArea = {
 
 function startGame() {
   myGameArea.start();
+  let audio = new Audio("assets/audio/Bubble Bobble -Theme.mp3");
+  audio.play();
   myGamePiece = new component("image", 43, 70, "./assets/images/finn-L1.png", 10, 430);
   myPrincess = new component("image", 70, 70, "./assets/images/princess.png", 550, 0);
   myObstacle = new component("image", 100, 35, "./assets/images/gumdrops.png", 250, 375);
@@ -186,8 +188,11 @@ function updateGameArea() {
   if (myGameArea.keys && myGameArea.keys[83]) {
     myGamePiece.speedY = 4; }
   if (myGameArea.keys && myGameArea.keys[32] && myGamePiece.speedY === 0) {
+    if (myGamePiece.jump > -0.1) {
+      let audio = new Audio("assets/audio/boing.mp3");
+      audio.play();
+    }
     myGamePiece.jump = -10;}
-  console.log(myGamePiece.image.src[myGamePiece.image.src.length - 6], myGamePiece.image.src[myGamePiece.image.src.length - 5])
   
   myGamePiece.newPos();
   myGamePiece.update();
@@ -197,7 +202,6 @@ function updateGameArea() {
   mySecondObstacle.update();
   if (myBackground.x <= -1280) {
     myBackground.x = -1280;
-    console.log("WW");
   }
   if (myBackground.x > 0) {
     myBackground.x = 0;

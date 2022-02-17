@@ -27,6 +27,24 @@
     display: none;
   }
   
+  button {
+  position: fixed;
+  margin-left:300px;
+  padding: 15px 20px 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  border: 3px solid black;
+  transition: 0.5s;
+  background-color: gold;
+  font-size: 18px;
+  font-weight: bold;
+  }
+
+  button:hover {
+    transform: translateY(-10px);
+  }
   </style>
   <script src="js/jquery-3.6.0.js"></script>
 
@@ -35,12 +53,18 @@
 <body>
   <div class="container">
     <img src="assets/images/logo.png" alt="logo">
-    <a href="./party.html" accesskey="q">Continue</a>
+    <!-- <a href="./party.html" accesskey="q">Continue</a> -->
+    <button id="start">- - START - - </button>
   </div>
   <div>
     <audio controls autoplay>
       <source src="assets/audio/Opening Theme.mp3" type="audio/mp3">
     </audio>
   </div>
+  <script>
+    $("#start").on("click", function() {
+      window.location.href = "./party.html"
+    })
+  </script>
 </body>
 </html>
