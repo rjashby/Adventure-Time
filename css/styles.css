@@ -54,6 +54,9 @@ canvas {
   font-size: 30px;
   margin-left: 45%;
   margin-right: 45%;
+  border-radius: 5%;
+  border: 3px solid black;
+  padding: 8px;
 }
 
 .play-again:hover {
